@@ -1,3 +1,4 @@
 <launch>
-
+    <node pkg="turtle0pkg" name="teleop_turtle_node" type="teleop_turtle.py" />
+    <remap from="cmd_vel" to="turtle1/cmd_vel"/> 
 </launch>
