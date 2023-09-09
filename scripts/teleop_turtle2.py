@@ -9,14 +9,14 @@ class Talker():
     def __init__(self):
         #パブリッシャの生成
         #トピック名、メッセージの型、キューサイズ
-        self.twist_pub = rospy.Publisher("cmd_vel", Twist, queue_size=100)
+        self.twist_pub = rospy.Publisher("turtle1/cmd_vel", Twist, queue_size=100)
 
     #メッセージをパブリッシュする関数
     def publish(self):
         #送るメッセージの定義
         cmd_vel = Twist()
-        cmd_vel.linear.x = 3.0
-        cmd_vel.angular.z = 2.0
+        cmd_vel.linear.x = 2.0
+        cmd_vel.angular.z = 1.2
 
         #メッセージをパブリッシュする
         self.twist_pub.publish(cmd_vel)
