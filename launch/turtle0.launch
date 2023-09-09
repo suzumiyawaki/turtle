@@ -1,4 +1,5 @@
 <launch>
-    <node pkg="turtle0pkg" name="teleop_turtle_node" type="teleop_turtle.py" />
-    <remap from="cmd_vel" to="turtle1/cmd_vel"/> 
+    <node pkg="turtlesim" name="turtlesim" type="turtlesim_node" />
+    <node pkg="turtle0pkg" name="teleop_turtle_node" type="teleop_turtle2.py" />
+    <node pkg="turtle0pkg" name="turtlesim_node" type="turtlesim2.py" />
 </launch>
