@@ -16,10 +16,13 @@ class Talker():
         #送るメッセージの定義
         cmd_vel = Twist()
         cmd_vel.linear.x = 2.0
-        cmd_vel.angular.z = 1.2
+        cmd_vel.angular.z = -1.2
 
         #メッセージをパブリッシュする
         self.twist_pub.publish(cmd_vel)
+
+        #画面に表示
+        rospy.loginfo(f"Published linear.x:{cmd_vel.linear.x}, angular.z:{cmd_vel.angular.z}")
 
 if __name__ == "__main__":
     #ノードの生成
@@ -31,6 +34,12 @@ if __name__ == "__main__":
     #ループの周期
     #この場合10Hz、1秒に10回
     rate = rospy.Rate(10)
+
+    #aキーを押したらプログラム終了
+    #while True:
+        #if keyboard.is_pressed('a'):
+            #sys.exit()
+        #time.sleep(2)
 
     #ROSが立ち上がってる間は、、
     while not rospy.is_shutdown():
