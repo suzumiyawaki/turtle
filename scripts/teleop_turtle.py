@@ -5,16 +5,10 @@ from geometry_msgs.msg import Twist
 
 cmd_vel = Twist()
 cmd_vel.linear.x = 3.0
-cmd_vel.angular.z = 5.0
+cmd_vel.angular.z = 2.0
 
-def update_cmd_vel():
-    global cmd_vel
-    cmd_vel.linear.x = 3.0
-    cmd_vel.angular.z = 5.0
-        
-
-#def teleop_turtle():
-if __name__ == '__main__':    
+def teleop_turtle():
+#if __name__ == '__main__':    
     #ノードの生成
     rospy.init_node('teleop_turtle_node')
     #トピック名、メッセージの型、キューサイズ
@@ -27,7 +21,7 @@ if __name__ == '__main__':
     #ROSが立ち上がっている間は...
     while not rospy.is_shutdown():
 
-        update_cmd_vel()
+        #update_cmd_vel()
 
         #メッセージをパブリシュする
         pub.publish(cmd_vel)
@@ -49,7 +43,7 @@ if __name__ == '__main__':
 #while True:
        #if get_key == "":
           # break
-#Enterキーを押したらプログラム終了
+#キーを押したらプログラム終了
 #while True:
     #if keyboard.is_pressed('a'):
         #sys.exit()
